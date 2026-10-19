@@ -1,0 +1,46 @@
+{
+  "name": "react-native-notifications-enabled",
+  "version": "1.0.0",
+  "description": "Check whether notifications are enabled on an Android device",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "!android/build",
+    "!android/.gradle"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "notifications"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanamd/react-native-notifications-enabled"
+  },
+  "author": "Juan Story",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.80.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.3",
+    "react": "19.3.0",
+    "react-native": "0.88.0",
+    "typescript": "^6.0.0"
+  },
+  "codegenConfig": {
+    "name": "NotificationsEnabledSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "os.juanamd.notificationsenabled"
+    }
+  }
+}

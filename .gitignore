@@ -1,0 +1,9 @@
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Android / IntelliJ
+android/build/
+android/.gradle/
+android/local.properties
+.idea/

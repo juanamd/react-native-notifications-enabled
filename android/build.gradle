@@ -1,0 +1,39 @@
+def getExtOrDefault(name) {
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties["NotificationsEnabled_" + name]
+}
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "com.facebook.react"
+
+android {
+  namespace "os.juanamd.notificationsenabled"
+
+  compileSdk getExtOrDefault("compileSdkVersion").toInteger()
+
+  defaultConfig {
+    minSdk getExtOrDefault("minSdkVersion").toInteger()
+    targetSdk getExtOrDefault("targetSdkVersion").toInteger()
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+}
+
+kotlin {
+  compilerOptions {
+    jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+  }
+}
+
+repositories {
+  google()
+  mavenCentral()
+}
+
+dependencies {
+  implementation "com.facebook.react:react-android"
+  implementation "androidx.core:core-ktx:1.16.0"
+}
